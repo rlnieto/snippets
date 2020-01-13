@@ -16,11 +16,11 @@ app = Flask(__name__)
 app.config['CORS_HEADERS'] = 'Content_Type'
 
 @app.route("/")
-@cross_origin()
 def root_url():
     return "Basic js file server using flask"
 
 @app.route('/<path:path>')
+@cross_origin()
 def send_js_file(path):
     return send_from_directory('.', path)
 
