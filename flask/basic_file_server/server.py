@@ -23,3 +23,8 @@ def root_url():
 @app.route('/<path:path>')
 def send_js_file(path):
     return send_from_directory('.', path)
+
+# Para arrancarlo con python en lugar de flask (con sudo por seguridad al ser un puerto <1024)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=80)
+
